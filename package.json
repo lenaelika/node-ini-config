@@ -1,0 +1,21 @@
+{
+  "name": "ini-config",
+  "version": "0.0.1",
+  "description": "main.ini + env.ini config",
+  "keywords": ["config", "ini", "env"],
+  "homepage": "https://github.com/elkesu/node-ini-config",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/elkesu/node-ini-config.git"
+  },
+  "bugs": {
+    "url": "https://github.com/elkesu/node-ini-config/issues"
+  },
+  "author": "Elena <elkesu@gmail.com>",
+  "license": "ISC",
+  "main": "index.js",
+  "dependencies": {
+    "ini": ">= 1.3.4",
+    "merge": ">= 1.2.0"
+  }
+}
