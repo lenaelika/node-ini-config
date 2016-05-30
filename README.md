@@ -19,7 +19,11 @@ config/.gitignore
 In your app:
 
 ```js
-const config = require('ini-config'); // js array
+// an array of merged settings
+var config = require('ini-config');
+
+// for test environment you can override settings using a specific section
+config.apply('test');
 ```
 
 
@@ -76,7 +80,7 @@ Usage
 -----
 
 ```js
-const config = require('ini-config');
+var config = require('ini-config');
 
 console.log(config.web.host);  // get string parameter
 console.log(+config.web.port); // get int parameter
@@ -84,3 +88,27 @@ console.log(config.mongodb);   // get section
 ```
 
 Settings from `env.ini` will override settings from `main.ini`.
+
+
+Test Environment
+----------------
+
+In order to keep logic simple and straightforward, there is no option for using different INI files.
+Instead, you can specify changes for test environment in `env.ini` under section `test`:
+
+```ini
+[test.web]
+port = 3008
+
+[test.mongodb]
+connectionString = mongodb://localhost:27017/test
+```
+
+Apply changes before running tests:
+
+```js
+var config = require('ini-config');
+config.apply('test');
+```
+
+_Note: Do not use section "apply" in INI files, a function will replace it._
