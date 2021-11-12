@@ -8,33 +8,33 @@ var assert = require('assert'),
 describe('package', () => {
     
     it('merges main.ini and env.ini into an array', () => {
-        var expect = {
-            'web': {
+        var expect = Object.assign(Object.create(null), {
+            'web': Object.assign(Object.create(null), {
                 'host': 'localhost',
                 'port': '3000'
-            },
-            'mongodb': {
+            }),
+            'mongodb': Object.assign(Object.create(null), {
                 'connectionString': 'mongodb://localhost:27017/app'
-            },
+            }),
             'test': config.test,
             'apply': config.apply
-        };
+        });
         
         assert.deepStrictEqual(config, expect);
     });
     
     it('can apply test section', () => {
-        var expect = {
-            'web': {
+        var expect = Object.assign(Object.create(null), {
+            'web': Object.assign(Object.create(null), {
                 'host': 'localhost',
                 'port': '3008'
-            },
-            'mongodb': {
+            }),
+            'mongodb': Object.assign(Object.create(null), {
                 'connectionString': 'mongodb://localhost:27017/test'
-            },
+            }),
             'test': config.test,
             'apply': config.apply
-        };
+        });
         
         config.apply('test');        
         assert.deepStrictEqual(config, expect);        

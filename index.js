@@ -30,7 +30,7 @@ function parseConfig(name) {
  */
 config.apply = function(section) {
     
-    if (!this.hasOwnProperty(section)) {
+    if (this[section] === undefined) {
         throw new Error('Section "' + section + '" not found in config');
     }
     

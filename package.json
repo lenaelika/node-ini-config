@@ -1,28 +1,32 @@
 {
   "name": "ini-config",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "main.ini + env.ini config",
-  "keywords": ["config", "ini", "env"],
-  "homepage": "https://github.com/elkesu/node-ini-config",
+  "keywords": [
+    "config",
+    "ini",
+    "env"
+  ],
+  "homepage": "https://github.com/lenaelika/node-ini-config",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/elkesu/node-ini-config.git"
+    "url": "git+https://github.com/lenaelika/node-ini-config.git"
   },
   "bugs": {
-    "url": "https://github.com/elkesu/node-ini-config/issues"
+    "url": "https://github.com/lenaelika/node-ini-config/issues"
   },
-  "author": "Elena <elkesu@gmail.com>",
+  "author": "Elena Litovchenko <lenaelika@mail.ru>",
   "license": "ISC",
   "main": "index.js",
   "files": [
     "index.json"
   ],
   "dependencies": {
-    "ini": ">= 1.3.4",
-    "merge": ">= 1.2.0"
+    "ini": "2",
+    "merge": "^2.1.1"
   },
   "devDependencies": {
-    "mocha": ">= 2.4.5"
+    "mocha": "^9.1.3"
   },
   "scripts": {
     "test": "mocha test.js"
